@@ -1,0 +1,47 @@
+// abba = true
+abbba = true
+babba =  (abbba) = true
+abcba = true
+a =true
+aa = true
+asdfsdfa = true
+aaaabbbb =  (bbaaaabb) = true
+
+asdf = false
+aaba = false
+aaabbb = false
+
+
+
+function Palindrome(word) {
+        if (word.length <= 1){
+            return true
+        }
+
+        const letterArray = word.split("")
+        const uniqueLetters = new Set (letterArray)
+        const solution = new Set()
+
+        for(let i = 0; i < letterArraylength; i++){
+            const currentLetter = letterArray[i]
+            if( solution.has(currentLetter)) {
+
+                solution.delete(currentLetter)
+
+            } else { 
+
+                solution.add (currentLetter)
+
+            }
+
+        }
+    
+    if (solution.size >1){
+        return false
+    } else{
+        return true
+    }
+}
+
+
+o(n)

@@ -1,0 +1,68 @@
+
+class Counter extends React.Componenet {
+
+constructor(props) {
+    super(props)
+    this.state = {
+        counter: 0
+    }
+}
+
+
+        timer = undefined
+
+        clickHandler = (e) => {
+            if(e.target.text === "Increase"){
+
+                let count = this.state.count
+                let increase = count +1
+                this.setState({ count: increase})
+
+            } else if(e.target.text === "Decrease"){
+                let count = this.state.count
+                let decrease = count -1
+                this.setState({ count: decrease})
+            }else if(e.target.text === "Zero"){
+                let count = this.state.count
+                let reset = (count*0)
+                this.setState({count: reset})
+            }
+        }
+
+
+
+        componenetDidUpdate(prevState, afterState){
+            if(this.state.timer % 5 === 0){
+                let count = this.afterState.count
+                let increase = count +1
+                this.setState({ count: increase})
+            }
+        }
+
+
+        componentDidMount(){
+            const futureCount= this.state.count+1
+            this.timer = setInterval(()=>this.setState(count: futureCount), 5000)
+        }
+
+        componentDidUnmount() {
+            clearInterval(this.timer)
+        }
+
+
+
+    render(){
+        
+
+        return(
+            <>
+            <span>{this.state.count}</span> 
+            <button onClick = {this.clickHandler} >Increase</button>
+            <button onClick = {this.clickHandler}>Decrease</button>
+            <button onClick = {this.clickHandler} >Zero</button>
+            </>
+
+        )
+    }
+}
+
