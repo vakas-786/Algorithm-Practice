@@ -18,20 +18,6 @@ var lengthOfLongestSubstring = function(s) {
     return max
 };
 const s = 'pwwkew'
-console.log(lengthOfLongestSubstring(s))
+console.log([lengthOfLongestSubstring(s)])
 
 
-// const unique = new Set()
-//     let str = ''
-//     for (let i=0; i < s.length; i ++){
-//         unique.add(s.indexOf(s[i]))
-//     }
-//     let array = Array.from(unique)
-//     for (let j =0; j < unique.size - 1; j ++){
-//         if (array[j + 1] - array[j] !== 1){
-//             array.shift()
-//         }
-//         str += s[array[j]]
-//     }
-    
-//     return array
