@@ -21,3 +21,5 @@ function expandAroundCenter(s, left, right) {
   }
   return right - left - 1;
 };
+const s = "babad"
+console.log(longestPalindrome(s))
