@@ -12,6 +12,7 @@ var convert = function(s, numRows) {
         reverse ? count-- : count++;
         if (count === numRows - 1 || count === 0) reverse = !reverse;
     }
+    console.log(rows)
     return rows.reduce((converted, cur) => converted + cur.join(''), '');
 };
 
