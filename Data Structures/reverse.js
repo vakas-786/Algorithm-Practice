@@ -14,6 +14,7 @@ var reverse = function(x) {
     
 };
 
-const x = -2147483648
+const x = -214748364
 
 console.log(reverse(x))
+
