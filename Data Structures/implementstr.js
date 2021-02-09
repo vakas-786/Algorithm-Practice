@@ -1,6 +1,5 @@
 const strStr = (haystack, needle) => {
     if (needle === '' || needle === haystack) return 0;    // the only mandatory check here is (needle === '')
-    if (haystack.length < needle.length) return -1;        // the other ones are for efficiency
     
     for (let i = 0; i < haystack.length - needle.length + 1; i++) {    // start looping through haystack until the remaining substring is shorter than needle
       if (haystack[i] === needle[0]) {                // as soon as we see a character that matches the first character of needle
