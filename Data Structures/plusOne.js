@@ -10,5 +10,8 @@ var plusOne = function(digits) {
     digits.unshift(1)
     return digits
 };
-number = [1,2,3]
+
+
+number = [1,2,6]
 console.log(plusOne(number))
+
