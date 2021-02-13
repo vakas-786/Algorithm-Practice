@@ -1,12 +1,13 @@
 
 const SearchingChallenge = function(str) { 
 
-    const stack = [];
+    let stack = [];
     const map = {
       '(': ')',
       '[': ']'
     }
     let counter = 0
+    let tester = 0
     for (let i = 0; i <str.length; i++){
       if (str[i] === '(' || '['){
         let c = str[i]
@@ -18,20 +19,22 @@ const SearchingChallenge = function(str) {
         default: 
           if (map[c] !== stack.pop()){
             counter ++
+            tester ++
+          }else {
+              tester --
           }
         }
       }
     }
-    
-    if (stack.length % 2 !== 0){
-      return `${1} ${counter}`; 
-    } else {
-        return 0
-    }
-    
-    }
 
-    const quote = "(hello world]))))!"
+    if (Math.abs(tester) !== counter){
+        return 0 
+    }else {
+        return `${1} ${counter}`;
+    }
+}
+
+    const quote = "(c([od]er)) b(yt[e])"
 
     console.log(SearchingChallenge(quote));
 
