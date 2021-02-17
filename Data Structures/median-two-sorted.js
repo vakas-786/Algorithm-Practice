@@ -13,7 +13,7 @@ var findMedianSortedArrays = function(nums1, nums2) {
        return median 
     }    
 };
-nums1 = [1,2]
-nums2 = [3,4]
+nums1 = [3,2]
+nums2 = [1,7,5]
 
 console.log(findMedianSortedArrays(nums1, nums2))

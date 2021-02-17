@@ -1,40 +1,37 @@
-
 const SearchingChallenge = function(str) { 
 
-    let stack = [];
-    const map = {
-      '(': ')',
-      '[': ']'
+  var leftPCount = 0;
+  var rightPCount = 0;
+  var leftBCount = 0;
+  var rightBCount = 0;
+
+  for (var i = 0; i <= str.length; i++) {
+    if (str[i] === '(') {
+      leftPCount++;
+    } else if (str[i] === ')') {
+      rightPCount++;
     }
-    let counter = 0
-    let tester = 0
-    for (let i = 0; i <str.length; i++){
-      if (str[i] === '(' || '['){
-        let c = str[i]
-        switch(c){
-          case '(': stack.push(map[c]);
-            break;
-          case '[': stack.push(map[c]);
-            break;
-        default: 
-          if (map[c] !== stack.pop()){
-            counter ++
-            tester ++
-          }else {
-              tester --
-          }
-        }
-      }
+    if (rightPCount > leftPCount) {
+      return 0;
     }
 
-    if (Math.abs(tester) !== counter){
-        return 0 
-    }else {
-        return `${1} ${counter}`;
+    if (str[i] === '[') {
+      leftBCount++;
+    } else if (str[i] === ']') {
+      rightBCount++;
     }
+    if (rightBCount > leftBCount) {
+      return 0;
+    }
+  }
+
+  if ((leftPCount === rightPCount) && (leftBCount === rightBCount)) {
+    return '1 ' + (leftPCount + leftBCount);
+  }
+  return 0;
 }
 
-    const quote = "(c([od]er)) b(yt[e])"
+    const quote = "(c([od]er)) b(yte)"
 
     console.log(SearchingChallenge(quote));
 
